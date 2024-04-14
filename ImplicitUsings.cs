@@ -1,0 +1,10 @@
+﻿global using BoDi;
+global using FluentAssertions;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Playwright;
+global using PlaywrightPracticeTask2024.Drivers;
+global using PlaywrightPracticeTask2024.Models;
+global using PlaywrightPracticeTask2024.Pages;
+global using TechTalk.SpecFlow;
+global using TechTalk.SpecFlow.Assist;
+global using PlaywrightPracticeTask2024.Config;
