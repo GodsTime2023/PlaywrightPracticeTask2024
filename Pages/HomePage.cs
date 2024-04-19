@@ -11,8 +11,10 @@
         }
 
         ILocator elements => _page.GetByText("Elements");
+        ILocator AlertFrameAndWindows => _page.GetByText("Alerts, Frame & Windows");
 
         public async Task GotoSite() => await _page.GotoAsync(_readFromConfig.GetJsonData("env:demoqaurl"));
         public async Task ClickElements()=> await elements.ClickAsync();
+        public async Task ClickAlertFramesAndWindows()=> await AlertFrameAndWindows.ClickAsync();
     }
 }

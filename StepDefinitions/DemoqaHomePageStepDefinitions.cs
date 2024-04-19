@@ -20,4 +20,10 @@ public sealed class DemoqaHomePageStepDefinitions
     {
         await homePage.ClickElements();
     }
+
+    [When(@"user click on Alerts, Frame & Windows")]
+    public async Task WhenUserClickOnAlertsFrameWindows()
+    {
+        await homePage.ClickAlertFramesAndWindows();
+    }
 }
