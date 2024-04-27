@@ -1,5 +1,4 @@
-﻿
-namespace PlaywrightPracticeTask2024.Pages
+﻿namespace PlaywrightPracticeTask2024.Pages
 {
     public class BrowserWindow
     {
@@ -11,9 +10,13 @@ namespace PlaywrightPracticeTask2024.Pages
 
         ILocator newTab => _page.GetByText("New Tab");
         ILocator newWindow => _page.Locator("#windowButton");
+        ILocator newWindowMessage => _page.Locator("#messageWindowButton");
+        ILocator newWindowHeader => _page.Locator("//h1");
+        ILocator newWindowMessageHeader => _page.Locator("//body");
 
         public async Task ClickNewTab() => await newTab.ClickAsync();
         public async Task ClickNewWindowButton() => await newWindow.ClickAsync();
+        public async Task ClickNewWindowMessageButton() => await newWindowMessage.ClickAsync();
 
         public async Task<IPage> SwitchTab1()
         {
@@ -36,9 +39,12 @@ namespace PlaywrightPracticeTask2024.Pages
             return await Task.FromResult(_page.Url);
         }
 
-        public async Task<string> VerifyNewTabHeaderText()
+        public async Task<string?> VerifyNewTabHeaderText(KeyWordEnumValue keyWord)
         {
-            var headerText = await _page.Locator("//h1").TextContentAsync();
+            var headerText = keyWord.ToString() == KeyWordEnumValue.Tab.ToString()
+                ? await newWindowHeader.TextContentAsync()
+                : keyWord.ToString() == KeyWordEnumValue.Window.ToString()
+                ? await newWindowMessageHeader.TextContentAsync() : null;
             return await Task.FromResult(headerText);
         }
     }

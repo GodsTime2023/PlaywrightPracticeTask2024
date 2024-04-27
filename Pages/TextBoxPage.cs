@@ -5,12 +5,12 @@ public class TextBoxPage
     private IPage _page;
     public TextBoxPage(IPage page) => _page = page;
 
-    ILocator fullName => _page.GetByPlaceholder("Full Name");
-    ILocator email => _page.GetByPlaceholder("name@example.com");
-    ILocator currentAddress => _page.GetByPlaceholder("Current Address");
-    ILocator parmanentAddress => _page.Locator("#permanentAddress");
-    ILocator submitBtn => _page.Locator("#submit");
-    Task<IReadOnlyList<IElementHandle>> output => _page.QuerySelectorAllAsync("#output > div > p");
+    private ILocator fullName => _page.GetByPlaceholder("Full Name");
+    private ILocator email => _page.GetByPlaceholder("name@example.com");
+    private ILocator currentAddress => _page.GetByPlaceholder("Current Address");
+    private ILocator parmanentAddress => _page.Locator("#permanentAddress");
+    private ILocator submitBtn => _page.Locator("#submit");
+    private Task<IReadOnlyList<IElementHandle>> output => _page.QuerySelectorAllAsync("#output > div > p");
 
     public async Task EnterFullName(string fname) => await fullName.FillAsync(fname);
     public async Task EnterEmail(string emailAddress) => await email.FillAsync(emailAddress);
