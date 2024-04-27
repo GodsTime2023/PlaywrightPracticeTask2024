@@ -11,6 +11,7 @@
         ILocator browserWindow => _page.GetByText("Browser Windows");
 
         public async Task ClickBrowserWindow() => await browserWindow.ClickAsync();
+
         public async Task<string> VerifyAlertWindowPage() => await Task.FromResult(_page.Url);
     }
 }

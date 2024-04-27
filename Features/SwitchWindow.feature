@@ -23,3 +23,13 @@ Scenario: Switch between Window
 		And I switch to the new window
 	Then I am on browser windows new window page
 	Then 'This is a sample page' is displayed on window page 2
+
+@Switch
+Scenario: Switch between New Window Message
+	Given user is on demoqa page
+	When user click on Alerts, Frame & Windows
+	Then I am on alert windows page
+	When I click Browser windows
+		And I click New Window message button
+		And I switch to the new window
+	Then 'organization' is displayed on New Window Message page

@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-
-namespace PlaywrightPracticeTask2024.StepDefinitions
+﻿namespace PlaywrightPracticeTask2024.StepDefinitions
 {
     [Binding]
     public class BrowserWindowsStepDefinitions
@@ -52,7 +50,7 @@ namespace PlaywrightPracticeTask2024.StepDefinitions
         [Then(@"'([^']*)' is displayed on tab page 2")]
         public async Task ThenIsDisplayedOnTabPage(string expectedHeaderText)
         {
-            var actualHeaderText = await browserWindow.VerifyNewTabHeaderText();
+            var actualHeaderText = await browserWindow.VerifyNewTabHeaderText(KeyWordEnumValue.Tab);
             Assert.That(actualHeaderText == expectedHeaderText, Is.EqualTo(true));
         }
 
@@ -67,7 +65,7 @@ namespace PlaywrightPracticeTask2024.StepDefinitions
         [Then(@"'([^']*)' is displayed on window page 2")]
         public async Task ThenIsDisplayedOnWindowPage(string expectedHeaderText)
         {
-            var actualHeaderText = await browserWindow.VerifyNewTabHeaderText();
+            var actualHeaderText = await browserWindow.VerifyNewTabHeaderText(KeyWordEnumValue.Tab);
             Assert.That(actualHeaderText == expectedHeaderText, Is.EqualTo(true));
         }
 
@@ -76,6 +74,19 @@ namespace PlaywrightPracticeTask2024.StepDefinitions
         {
             var url = await browserWindow.VerifyNewTabWindow();
             Assert.That(url.Contains("sample"), Is.EqualTo(true));
+        }
+
+        [When(@"I click New Window message button")]
+        public async Task WhenIClickNewWindowMessageButton()
+        {
+            await browserWindow.ClickNewWindowMessageButton();
+        }
+
+        [Then(@"'([^']*)' is displayed on New Window Message page")]
+        public async Task ThenIsDisplayedOnNewWindowMessagePage(string organization)
+        {
+            var blank = await browserWindow.VerifyNewTabHeaderText(KeyWordEnumValue.Window);
+            Assert.That(blank?.Contains(organization), Is.EqualTo(true));
         }
     }
 }
