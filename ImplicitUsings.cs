@@ -11,3 +11,4 @@ global using System.Runtime.Serialization;
 global using TechTalk.SpecFlow;
 global using TechTalk.SpecFlow.Assist;
 global using static PlaywrightPracticeTask2024.Enums.Keywords;
+global using NUnit.Framework;
