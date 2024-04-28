@@ -111,34 +111,34 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("user click Text Box menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "FullName",
                             "Email",
                             "CurrentAddress",
                             "ParmanentAddress"});
-                table1.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "Test",
                             "A@test.com",
                             "mycurrentaddress",
                             "myparmanentadress"});
 #line 10
- testRunner.And("user enters the following details", ((string)(null)), table1, "And ");
+ testRunner.And("user enters the following details", ((string)(null)), table4, "And ");
 #line hidden
 #line 13
  testRunner.And("user click submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "FullName",
                             "Email",
                             "CurrentAddress",
                             "ParmanentAddress"});
-                table2.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "Test",
                             "A@test.com",
                             "mycurrentaddress",
                             "myparmanentadress"});
 #line 14
- testRunner.Then("the following details are displayed in output", ((string)(null)), table2, "Then ");
+ testRunner.Then("the following details are displayed in output", ((string)(null)), table5, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
