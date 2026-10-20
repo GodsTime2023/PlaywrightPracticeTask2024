@@ -1,4 +1,7 @@
-﻿namespace PlaywrightPracticeTask2024.StepDefinitions
+﻿using Reqnroll;
+using Reqnroll.BoDi;
+
+namespace PlaywrightPracticeTask2024.StepDefinitions
 {
     [Binding]
     public class BrowserWindowsStepDefinitions
@@ -6,6 +9,7 @@
         private BrowserWindow browserWindow;
         private AlertWindowsPage alertWindowsPage;
         private Task<IPage> page;
+
         public BrowserWindowsStepDefinitions(IObjectContainer container)
         {
             browserWindow = container.Resolve<BrowserWindow>();
@@ -27,7 +31,7 @@
         }
 
         [When(@"I click New Tab button")]
-        public async Task WhenIClcikNewTabButton()
+        public async Task WhenIClickNewTabButton()
         {
             await browserWindow.ClickNewTab();
         }

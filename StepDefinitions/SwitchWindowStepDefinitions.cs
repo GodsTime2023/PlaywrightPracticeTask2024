@@ -1,3 +1,6 @@
+using Reqnroll;
+using Reqnroll.BoDi;
+
 namespace PlaywrightPracticeTask2024.StepDefinitions
 {
     [Binding]

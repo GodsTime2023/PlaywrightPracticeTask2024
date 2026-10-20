@@ -12,7 +12,7 @@ public class DriverContext
         _browser = await _playwright.Chromium.LaunchAsync(new()
         {
             Channel = "chrome",
-            SlowMo = 30,
+            SlowMo = 50,
             Headless = false
         });
 
@@ -20,11 +20,11 @@ public class DriverContext
         {
              ViewportSize = 
              new ViewportSize()
-             {Height = 1080,Width = 1080}
+             {Height = 610, Width = 1310}
         });
-
+        //await _page.PauseAsync();
         return _page;
+        
     }
-
     public async Task QuitBrowser() => await _page.CloseAsync();
 }
