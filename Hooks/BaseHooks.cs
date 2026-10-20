@@ -1,4 +1,7 @@
-﻿namespace PlaywrightPracticeTask2024.Hooks;
+﻿using Reqnroll;
+using Reqnroll.BoDi;
+
+namespace PlaywrightPracticeTask2024.Hooks;
 
 [Binding]
 public class BaseHooks : DriverContext
